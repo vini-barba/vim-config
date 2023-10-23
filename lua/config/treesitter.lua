@@ -6,6 +6,7 @@ require 'nvim-treesitter.configs'.setup({
   indent = { enable = true },
   autotag = {
     enable = true,
+    filetypes = { 'go', 'lua', 'typescript', 'javascript', 'json', 'markdown', 'yaml', 'java' },
   },
   incremental_selection = {
     enable = true,

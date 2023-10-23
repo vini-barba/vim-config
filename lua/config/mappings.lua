@@ -24,7 +24,8 @@ wk.register(
       ["/"] = { '[/] Fuzzily search in current buffer' },
     },
 
-    pv = { '<cmd>NvimTreeToggle<CR>', "Project view" },
+    -- pv = { '<cmd>NvimTreeToggle<CR>', "Project view" },
+
     u = { '<cmd>UndotreeToggle<CR>', "Undotree" },
 
     tf = { '<cmd>KickstartFormatToggle<CR>', "[T]oggle [F]ormat" },

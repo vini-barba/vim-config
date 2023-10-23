@@ -64,7 +64,7 @@ local on_attach = function(client, bufnr)
       ca = { "[C]ode [A]ction" },
       d = { "Open [D]iagnostic" },
       dl = { "[D]iagnostic [L]oclist" },
-      f = { "<cmd>Format<CR>", "[F]ormat" },
+      -- f = { "<cmd>Format<CR>", "[F]ormat" },
       rn = { "[R]e[n]ame" },
       K = { 'Hover Documentation' },
     },

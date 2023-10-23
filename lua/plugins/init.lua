@@ -34,7 +34,8 @@ require("lazy").setup({
     },
     config = function()
       require("config.completion")
-    end
+    end,
+    build = "make install_jsregexp"
   },
 
   -- language service related plugins
@@ -72,6 +73,26 @@ require("lazy").setup({
     build = ':TSUpdate',
   },
 
+  {
+    "windwp/nvim-autopairs",
+    opts = {},
+  },
+
+  -- better quickfix list
+  {
+    'kevinhwang91/nvim-bqf',
+    ft = 'qf',
+    dependencies = {
+      'junegunn/fzf',
+      build = function()
+        vim.fn['fzf#install']()
+      end
+    },
+    config = function()
+      require("config.bqf")
+    end
+  },
+
   -- telescope related plugins
   {
     'nvim-telescope/telescope.nvim',
@@ -98,14 +119,24 @@ require("lazy").setup({
     end
   },
 
-  -- filetree related plugins
+  -- -- filetree related plugins
+  -- {
+  --   'nvim-tree/nvim-tree.lua',
+  --   dependencies = {
+  --     'nvim-tree/nvim-web-devicons' -- optional, for file icons
+  --   },
+  --   config = function()
+  --     require("config.filetree")
+  --   end
+  -- },
+
   {
-    'nvim-tree/nvim-tree.lua',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons' -- optional, for file icons
-    },
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("config.filetree")
+      require("config.oil")
     end
   },
 

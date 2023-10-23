@@ -50,6 +50,9 @@ local servers = {
   tsserver = {},
   yamlls = {},
   jdtls = {},
+  hls = {
+    filetypes = { 'haskell', 'lhaskell', 'cabal' },
+  },
 }
 
 mason_lspconfig.setup {

@@ -73,7 +73,9 @@ pcall(telescope.load_extension, 'fzf')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind [B]uffers' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind - [G]rep' })
-vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
+vim.keymap.set('n', '<leader>fd', function()
+  builtin.diagnostics({ severity_limit = vim.diagnostic.severity.INFO })
+end, { desc = '[F]ind [D]iagnostics' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
