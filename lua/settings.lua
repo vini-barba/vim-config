@@ -4,7 +4,7 @@ local apply_globals = require("utils").apply_globals
 apply_globals({
 	mapleader = " ",
 	loaded_python_provider = 0,
-	python3_host_prog = "/usr/bin/python3",
+	python3_host_prog = "/home/barba/.asdf/shims/python3",
 	spellfile_URL = "https://ftp.nluug.nl/vim/runtime/spell",
 })
 
@@ -94,3 +94,14 @@ apply_options({
 
 -- Set the spell check dictionary directory
 -- vim.opt.spellfile = vim.opt.spellfile + "/usr/share/aspell/"
+
+vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
+	pattern = { "*.*" },
+	desc = "save view (folds), when closing file",
+	command = "mkview",
+})
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+	pattern = { "*.*" },
+	desc = "load view (folds), when opening file",
+	command = "silent! loadview",
+})

@@ -112,16 +112,25 @@ return {
 			cssls = {},
 			dockerls = {},
 			gopls = {
-				filetypes = { "go", "gomod", "gowork", "gotmpl" },
-				gopls = {
-					gofumpt = true,
-					analyses = {
-						unusedparams = true,
+				settings = {
+					gopls = {
+						analyses = {
+							unusedparams = true,
+						},
+						staticcheck = true,
+						gofumpt = true,
+						completeUnimported = true,
+						usePlaceholders = true,
 					},
-					staticcheck = true,
-					completeUnimported = true,
-					usePlaceholders = true,
 				},
+				-- filetypes = { "go", "gomod", "gowork", "gotmpl" },
+				-- gofumpt = true,
+				-- analyses = {
+				-- 	unusedparams = true,
+				-- },
+				-- staticcheck = true,
+				-- completeUnimported = true,
+				-- usePlaceholders = true,
 			},
 			templ = {},
 			html = {},
@@ -138,6 +147,7 @@ return {
 				},
 			},
 			biome = {},
+			eslint = {},
 			-- tsserver = {
 			-- 	settings = {
 			-- 		implicitProjectConfiguration = {
@@ -155,9 +165,11 @@ return {
 					ruff = {},
 				},
 			},
+			-- pyright = {},
 			vtsls = {},
 			emmet_language_server = {},
-			hls = {},
+			-- hls = {},
+			elixirls = {},
 		}
 
 		local ensure_installed = vim.tbl_keys(servers or {})

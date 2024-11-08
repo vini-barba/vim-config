@@ -1,6 +1,7 @@
 return {
 	"echasnovski/mini.nvim",
 	config = function()
+		vim.api.nvim_set_keymap("n", "s", "", { noremap = true, silent = true })
 		-- Better Around/Inside textobjects
 		--
 		-- Examples:
